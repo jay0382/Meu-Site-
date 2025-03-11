@@ -1,37 +1,22 @@
-/* Centraliza e melhora a aparência do footer */
-.footer {
-  text-align: center;
-  background-color: #212529; /* Mantém o fundo escuro */
-  padding: 30px 0;
+/* Centraliza e melhora a aparência do footer */ .footer { text-align: center; background-color: #212529; /* Mantém o fundo 
+  escuro */ padding: 30px 0;
 }
 
-/* Ajusta a seção dos ícones sociais */
-.footer .social-icons {
-  margin-bottom: 15px;
+/* Ajusta a seção dos ícones sociais */ .footer .social-icons { margin-bottom: 15px;
 }
 
-.footer .social-icons a {
-  color: #fff !important;
-  font-size: 20px;
-  margin: 0 10px;
-  transition: color 0.3s ease, transform 0.3s ease;
+.footer .social-icons a { color: #fff !important; font-size: 20px; margin: 0 10px; transition: color 0.3s ease, transform 
+  0.3s ease;
 }
 
-.footer .social-icons a:hover {
-  color: #87CEFA; /* Azul claro */
-  transform: scale(1.2);
+.footer .social-icons a:hover { color: #87CEFA; /* Azul claro */ transform: scale(1.2);
 }
 
-/* Ajusta os links úteis para ficarem alinhados */
-.footer .row {
-  display: flex;
-  justify-content: center;
-  text-align: left;
+/* Ajusta os links úteis para ficarem alinhados */ .footer .row { display: flex; justify-content: center; text-align: left; 
   margin-top: 20px;
 }
 
-/* Remove os pontos da lista */
-.footer ul {
+/* Remove os pontos da lista */ .footer ul {
   list-style-type: none;
   padding: 0;
 }

@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // Importando Bootstrap
 import { Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
+import PrivacyPolicyModal from "./PrivacyPolicyModal";
+import TermsOfServiceModal from "./TermsOfServiceModal";
 import "./Footer.css";
 
 const Footer = () => {
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
+  const [showTermsModal, setShowTermsModal] = useState(false);
+
   return (
     <footer className="footer bg-dark text-light py-4">
       <div className="container text-center">
@@ -63,12 +68,29 @@ const Footer = () => {
 
         {/* Política de Privacidade e Termos de Serviço */}
         <div className="legal-links mt-3">
-          <a href="#">Política de Privacidade</a> |
-          <a href="#">Termos de Serviço</a>
+          <a 
+            href="#" 
+            onClick={(e) => { e.preventDefault(); setShowPrivacyModal(true); }} 
+            style={{ color: "yellow", textDecoration: "underline" }}
+          >
+            Política de Privacidade
+          </a> 
+          |
+          <a 
+            href="#" 
+            onClick={(e) => { e.preventDefault(); setShowTermsModal(true); }} 
+            style={{ color: "yellow", textDecoration: "underline" }}
+          >
+            Termos de Serviço
+          </a>
         </div>
 
         <p className="mt-3">&copy; 2024 CiberSecOnline. Todos os direitos reservados.</p>
       </div>
+
+      {/* Modais */}
+      <PrivacyPolicyModal show={showPrivacyModal} handleClose={() => setShowPrivacyModal(false)} />
+      <TermsOfServiceModal show={showTermsModal} handleClose={() => setShowTermsModal(false)} />
     </footer>
   );
 };

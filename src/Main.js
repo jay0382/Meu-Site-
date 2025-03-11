@@ -104,6 +104,33 @@ const Main = () => {
               </div>
             </div>
 
+             {/* Card 5 */}
+            <div className="col-md-4">
+              <div className="card h-100">
+                <img src="/images/Malware.jpg" className="card-img-top" alt="Malware" />
+                <div className="card-body">
+                  <h5 className="card-title">Malwares</h5>
+                  <p className="card-text">
+                    Compreenda o que são malwares e aprenda técnicas para se defender de vírus, ransomware e outras ameaças.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+              {/* Card 6 */}
+            <div className="col-md-4">
+              <div className="card h-100">
+                <img src="/images/Engenharia.jpeg" className="card-img-top" alt="Engenharia" />
+                <div className="card-body">
+                  <h5 className="card-title">Phishing e Engenharia Social</h5>
+                  <p className="card-text">
+                    Aprenda a identificar e se proteger contra tentativas de phishing e técnicas de manipulação psicológica usadas por invasores.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+
           </div>
         </div>
       )}
