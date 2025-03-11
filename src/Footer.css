@@ -1,0 +1,81 @@
+/* Centraliza e melhora a aparência do footer */
+.footer {
+  text-align: center;
+  background-color: #212529; /* Mantém o fundo escuro */
+  padding: 30px 0;
+}
+
+/* Ajusta a seção dos ícones sociais */
+.footer .social-icons {
+  margin-bottom: 15px;
+}
+
+.footer .social-icons a {
+  color: #fff !important;
+  font-size: 20px;
+  margin: 0 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  color: #87CEFA; /* Azul claro */
+  transform: scale(1.2);
+}
+
+/* Ajusta os links úteis para ficarem alinhados */
+.footer .row {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  margin-top: 20px;
+}
+
+/* Remove os pontos da lista */
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin: 5px 0;
+}
+
+/* Alinha as colunas e evita quebra */
+.footer .col-md-4 {
+  flex: 1;
+  min-width: 250px;
+  padding: 10px;
+}
+
+/* Estiliza os links */
+.footer a {
+  color: #fff !important;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 14px; /* Ajusta o tamanho da fonte */
+}
+
+.footer a:hover {
+  color: #87CEFA !important; /* Azul claro */
+}
+
+/* Ajusta a seção de política de privacidade */
+.footer .legal-links {
+  margin-top: 15px;
+}
+
+/* Correção da classe e hover */
+.footer .legal-links a {
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.footer .legal-links a:hover {
+  color: yellow !important; /* Amarelo */
+}
+
+/* Rodapé final */
+.footer p {
+  margin-top: 15px;
+  font-size: 14px;
+}

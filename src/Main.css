@@ -1,0 +1,43 @@
+.container.mt-5 {
+  min-height: 200px; /* Garante que o container tem altura */
+  opacity: 1; /* Torna visível */
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Ajusta o espaçamento entre os cards */
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajusta o tamanho das imagens dentro dos cards */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Título do card */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #007bff;
+}
+
+/* Texto do card */
+.card-text {
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+
+/* Efeito ao passar o mouse */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
