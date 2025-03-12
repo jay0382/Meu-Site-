@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -43,8 +44,12 @@ const Header = () => {
           
           {/* Botões de Entrar e Criar Conta */}
           <div className="d-flex">
-            <button className="btn btn-outline-light me-2">Entrar</button>
-            <button className="btn btn-primary">Criar Conta</button>
+            <Link to="/login" className="btn btn-outline-light me-2">
+              Entrar
+            </Link>
+            <Link to="/register" className="btn btn-outline-light  me-2">
+              Criar Conta
+            </Link>
           </div>
         </div>
       </div>

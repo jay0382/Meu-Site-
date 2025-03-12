@@ -1,0 +1,130 @@
+/* Arquivo Login.css */
+
+/* Estilo do container principal */
+.login-container {
+  background-color: #121212;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo da caixa de login */
+.login-box {
+  background-color: #1e1e1e;
+  width: 450px; /* Largura maior */
+  padding: 40px;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+/* Estilo do avatar (ícone do usuário) */
+.avatar {
+  font-size: 100px; /* Tamanho maior */
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Estilo dos inputs */
+.form-control {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* Placeholder dos inputs */
+.form-control::placeholder {
+  color: #bbb;
+}
+
+/* Efeito ao focar no input */
+.form-control:focus {
+  background-color: #444;
+  color: white;
+  box-shadow: none;
+  border: 1px solid #007bff;
+}
+
+/* Estilo do botão de login */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 5px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+/* Efeito hover no botão */
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo do checkbox "Me lembre" */
+.form-check-input {
+  background-color: #333;
+  border: none;
+}
+
+.form-check-label {
+  color: white;
+  margin-left: 5px;
+}
+
+/* Estilo dos links ("Esqueci minha senha" e "Criar Conta") */
+.text-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.text-link:hover {
+  color: #0056b3;
+}
+
+/* Estilo do ícone de olho (mostrar/ocultar senha) */
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #bbb;
+  transition: color 0.3s ease;
+}
+
+.position-absolute:hover {
+  color: #007bff;
+}
+
+/* Ajustes para telas pequenas (responsividade) */
+@media (max-width: 480px) {
+  .login-box {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .avatar {
+    font-size: 80px;
+  }
+
+  .form-control {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .btn-primary {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
