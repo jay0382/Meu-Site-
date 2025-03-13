@@ -5,9 +5,9 @@ const Main = () => {
   const [mostrarTópicos, setMostrarTópicos] = useState(false);
 
   return (
-    <>
-      {/* Introdução ao site e Vídeo */}
-      <div className="container mt-5">
+      <>
+          {/* Introdução ao site e Vídeo */}
+      <div className="container mt-5 video-container">
         <div className="row align-items-center">
           {/* Vídeo */}
           <div className="col-lg-6 text-center">
@@ -19,6 +19,7 @@ const Main = () => {
               allowFullScreen
             ></iframe>
           </div>
+
 
           {/* Introdução ao site */}
           <div className="col-lg-6">

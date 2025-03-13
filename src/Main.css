@@ -1,3 +1,11 @@
+.video-container {
+  margin-bottom: 20px; /* Espaço entre o vídeo e o footer */
+}
+
+.video-container iframe {
+  border-radius: 10px; /* Borda arredondada */
+}
+
 .container.mt-5 {
   min-height: 200px; /* Garante que o container tem altura */
   opacity: 1; /* Torna visível */

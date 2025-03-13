@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css"; // Importando Bootstrap
 import "./Login.css"; // Arquivo CSS para estilização
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Login = () => {
   const [rememberMe, setRememberMe] = useState(false);
