@@ -1,48 +1,12 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./Login.css";
+import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css"; // Importando Bootstrap
+import "./Login.css"; // Arquivo CSS para estilização
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Login = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
-
-  // Função para processar o login com o backend real
-  const handleLogin = async (event) => {
-    event.preventDefault();
-    setError("");
-
-    try {
-      const response = await fetch("https://seu-backend.vercel.app/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, senha }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        // Armazenar token JWT no localStorage
-        localStorage.setItem("token", data.token);
-        alert("Login bem-sucedido! Redirecionando...");
-
-        // Redirecionar para o dashboard
-        navigate("/dashboard");
-      } else {
-        setError(data.msg || "Erro ao fazer login.");
-      }
-    } catch (err) {
-      setError("Erro ao conectar ao servidor.");
-      console.error("Erro no login:", err);
-    }
-  };
 
   return (
     <div className="login-container d-flex align-items-center justify-content-center vh-100">
@@ -54,18 +18,12 @@ const Login = () => {
         </div>
         <h3 className="text-center text-light mb-4">Login</h3>
 
-        {/* Exibir mensagem de erro */}
-        {error && <div className="alert alert-danger">{error}</div>}
-
-        <form onSubmit={handleLogin}>
+        <form>
           <div className="mb-4">
             <input
               type="text"
               className="form-control"
               placeholder="E-mail ou Usuário"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
             />
           </div>
           <div className="mb-4 position-relative">
@@ -73,9 +31,6 @@ const Login = () => {
               type={showPassword ? "text" : "password"}
               className="form-control"
               placeholder="Senha"
-              value={senha}
-              onChange={(e) => setSenha(e.target.value)}
-              required
             />
             <i
               className={`fas ${
@@ -121,3 +76,4 @@ const Login = () => {
 };
 
 export default Login;
+
