@@ -46,13 +46,13 @@ const CookieConsent = () => {
       <Modal.Body>
         <p>Usamos cookies para melhorar sua experiência no nosso site. Selecione suas preferências abaixo.</p>
 
-        <Form>
           <Form.Check
             type="checkbox"
-            label="Cookies Essenciais (necessários para o funcionamento do site)"
+            label={<span>Cookies Essenciais (necessários para o funcionamento do site)</span>}
             checked={true}
             disabled
           />
+
           <Form.Check
             type="checkbox"
             label="Cookies de Desempenho (Google Analytics, etc.)"
