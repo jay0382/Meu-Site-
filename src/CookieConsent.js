@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
+import "./CookieConsent.css";
 
 const CookieConsent = () => {
   const [show, setShow] = useState(false);
