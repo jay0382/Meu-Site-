@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Modal, Button, Form } from "react-bootstrap";
 import "./CookieConsent.css";
 
 const CookieConsent = () => {
@@ -39,58 +38,52 @@ const CookieConsent = () => {
     setShow(false);
   };
 
-  return (
-    <Modal show={show} centered onHide={handleClose}>
-      <Modal.Header closeButton>
-        <Modal.Title>Política de Cookies</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
+  return show ? (
+    <div className="cookie-modal">
+      <div className="cookie-container">
+        <button className="close-btn" onClick={handleClose}>&times;</button>
+        <h2>Política de Cookies</h2>
         <p>Usamos cookies para melhorar sua experiência no nosso site. Selecione suas preferências abaixo.</p>
 
-          <Form>
-          <Form.Check
-            type="checkbox"
-            label="Cookies Essenciais (necessários para o funcionamento do site)"
-            checked={true}
-            disabled
-          />
+        <div className="cookie-options">
+          <label>
+            <input type="checkbox" checked={true} disabled />
+            <span className="checkmark"></span>
+            Cookies Essenciais (necessários para o funcionamento do site)
+          </label>
 
-          <Form.Check 
-            type="checkbox"
-            label="Cookies de Desempenho (Google Analytics, etc.)"
-            checked={cookies.desempenho}
-            onChange={(e) => setCookies({ ...cookies, desempenho: e.target.checked })}
-            className="form-check-label" 
-          />
-          <Form.Check
-            type="checkbox"
-            label="Cookies Funcionais (salvam preferências do usuário)"
-            checked={cookies.funcionais}
-            onChange={(e) => setCookies({ ...cookies, funcionais: e.target.checked })}
-          />
-          <Form.Check
-            type="checkbox"
-            label="Cookies de Publicidade (anúncios personalizados)"
-            checked={cookies.publicidade}
-            onChange={(e) => setCookies({ ...cookies, publicidade: e.target.checked })}
-          />
-        </Form>
+          <label>
+            <input type="checkbox" checked={cookies.desempenho} onChange={(e) => setCookies({ ...cookies, desempenho: e.target.checked })} />
+            <span className="checkmark"></span>
+            Cookies de Desempenho (Google Analytics, etc.)
+          </label>
+
+          <label>
+            <input type="checkbox" checked={cookies.funcionais} onChange={(e) => setCookies({ ...cookies, funcionais: e.target.checked })} />
+            <span className="checkmark"></span>
+            Cookies Funcionais (salvam preferências do usuário)
+          </label>
+
+          <label>
+            <input type="checkbox" checked={cookies.publicidade} onChange={(e) => setCookies({ ...cookies, publicidade: e.target.checked })} />
+            <span className="checkmark"></span>
+            Cookies de Publicidade (anúncios personalizados)
+          </label>
+        </div>
 
         <p>
           Para mais informações, leia nossa{" "}
-          <a href="/politica-de-privacidade">Política de Privacidade</a>.
+          <a href="/politica-de-privacidade" className="link">Política de Privacidade</a>.
         </p>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={handleSavePreferences}>
-          Salvar Preferências
-        </Button>
-        <Button variant="primary" onClick={handleAcceptAll}>
-          Aceitar Todos os Cookies
-        </Button>
-      </Modal.Footer>
-    </Modal>
-  );
+
+        <div className="cookie-buttons">
+          <button className="btn save" onClick={handleSavePreferences}>Salvar Preferências</button>
+          <button className="btn accept" onClick={handleAcceptAll}>Aceitar Todos os Cookies</button>
+        </div>
+      </div>
+    </div>
+  ) : null;
 };
 
 export default CookieConsent;
+

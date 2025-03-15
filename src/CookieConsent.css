@@ -1,7 +1,117 @@
-/* Força a cor do texto das labels */
-.form-check-label {
-    color: white !important;
-    display: inline-block !important;
+/* Fundo escurecido quando o modal estiver ativo */
+.cookie-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Container principal do modal */
+.cookie-container {
+    background: #1e1e2f;
+    padding: 25px;
+    border-radius: 12px;
+    width: 400px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #f0f0f0;
+    position: relative;
+}
+
+/* Botão de fechar */
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Estilizando os checkboxes */
+.cookie-options label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.cookie-options input {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ff6b81;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cookie-options input:checked {
+    background: #ff6b81;
+}
+
+.cookie-options input:checked::after {
+    content: "✔";
+    color: white;
+    position: absolute;
+    left: 3px;
+    top: -2px;
     font-size: 16px;
-    margin-left: 5px;
+    font-weight: bold;
+}
+
+/* Botões */
+.cookie-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn.save {
+    background: #444;
+    color: white;
+}
+
+.btn.save:hover {
+    background: #666;
+}
+
+.btn.accept {
+    background: #ff6b81;
+    color: white;
+}
+
+.btn.accept:hover {
+    background: #ff4757;
+}
+
+/* Link de privacidade */
+.link {
+    color: #ff6b81;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link:hover {
+    text-decoration: underline;
 }
