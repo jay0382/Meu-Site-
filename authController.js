@@ -105,3 +105,32 @@ const verificarStatus = async (req, res) => {
 
 // 🔹 EXPORTAR FUNÇÕES
 module.exports = { login, verificarStatus };
+
+
+// 🔹 REGISTRO DE USUÁRIO COM IMAGEM DE PERFIL
+const registrarUsuario = async (req, res) => {
+  const { nome, email, senha } = req.body;
+  const fotoPerfil = req.file ? req.file.filename : null; // nome do arquivo salvo no servidor
+
+  try {
+    const existe = await pool.query("SELECT * FROM usuarios WHERE email = $1", [email]);
+    if (existe.rows.length > 0) {
+      return res.status(400).json({ msg: "E-mail já cadastrado." });
+    }
+
+    const senhaHash = await bcrypt.hash(senha, 10);
+
+    await pool.query(
+      "INSERT INTO usuarios (nome, email, senha_hash, foto_perfil, criado_em) VALUES ($1, $2, $3, $4, NOW())",
+      [nome, email, senhaHash, fotoPerfil]
+    );
+
+    res.status(201).json({ msg: "Conta criada com sucesso!" });
+  } catch (error) {
+    console.error("Erro no registro:", error);
+    res.status(500).json({ msg: "Erro ao criar conta" });
+  }
+};
+
+// 🔹 EXPORTAR TODAS AS FUNÇÕES
+module.exports = { login, verificarStatus, registrarUsuario };
